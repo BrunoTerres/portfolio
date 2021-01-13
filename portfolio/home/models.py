@@ -10,3 +10,9 @@ class DevIntro(models.Model):
 class ProgrammingLanguages(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
+
+
+class Technologies(models.Model):
+    name = models.CharField(max_length=100)
+    language = models.ForeignKey(ProgrammingLanguages, on_delete=models.SET_NULL, null=True, blank=True)
+    description = models.TextField()
