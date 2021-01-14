@@ -1,6 +1,7 @@
 import requests
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.http import JsonResponse
 
 from .services import get_github
 
@@ -37,6 +38,13 @@ def github_api(request):
    response = requests.get('https://api.github.com/user/1')
    todos = response.json()
    context = {
-       'todos': todos,
+        'login':  todos.login,
+        'id':  todos.id,
+        'name':  todos.name, 
+        'avatar':  todos.avatar_url, 
+        'gravatar':  todos.gravatar_id,
+        'url':  todos.url, 
+        'html':  todos.html_url,
+        'bio':  todos.bio,
    }
    return render(request, "home/git_api.html", context)

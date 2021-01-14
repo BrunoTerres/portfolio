@@ -14,16 +14,15 @@
       </tr>
     </thead>
     <tbody>
-      {% for todo in todos %}
       <tr>
-        <th>{{ todo.login }}</th>
-        <th>{{ todo.id }}</th>
-        <th>{{ todo.name }}</th>
-        <th>{{ todo.avatar_url }}</th>
-        <th>{{ todo.gravatar_id }}</th>
-        <th>{{ todo.url }}</th>
-        <th>{{ todo.html_url }}</th>
-        <th>{{ todo.bio }}</th>
+        <th>{{ login }}</th>
+        <th>{{ id }}</th>
+        <th>{{ name }}</th>
+        <th>{{ avatar_url }}</th>
+        <th>{{ gravatar_id }}</th>
+        <th>{{ url }}</th>
+        <th>{{ html_url }}</th>
+        <th>{{ bio }}</th>
       </tr>
       {% endfor %}
     </tbody>
