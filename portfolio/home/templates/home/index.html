@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="">
+        <h1>{{ dev }}</h1>
+        <p>{{ dev.bio }}</p>
+        <img src="https://avatars3.githubusercontent.com/u/44822671?s=460&v=4" alt="Avatar" width="100" height="100">
+    </div>
+
+    <div class="">
+        <div class="">
+            <h2><a href="jobs">Jobs</a></h2>
+            {% for job in jobs %}
+            <h3> {{ job.name }} </h3>
+            <p>{{ job.description }}</p>
+            {% endfor %}
+        </div>
+
+        <hr>
+
+        <div class="">
+            <h2><a href="tools">Tools</a></h2>
+            {% for tool in tools %}
+            <h3> {{ tool.name }} </h3>
+            <p>{{ tool.description }}</p>
+            <p>{{ tool.language }}</p>
+            {% endfor %}
+        </div>
+
+        <hr>
+        
+        <div class="">
+            <h2><a href="languages">Languages</a></h2>
+            {% for language in languages %}
+            <h3> {{ language.name }} </h3>
+            <p>{{ language.description }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}

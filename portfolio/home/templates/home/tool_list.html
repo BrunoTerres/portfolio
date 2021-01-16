@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Tool List</h1>
+        {% if tool_list %}
+            <ul>
+                {% for tool in tool_list %}
+                    <li>
+                        <a href="{{ tool.get_absolute_url }}">{{ tool.name }}</a>
+                    </li>   
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>There are no Tools in the Portfolio.</p>
+        {% endif %}
+
+{% endblock %}

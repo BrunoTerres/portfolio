@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Bio, Language, Tool, Job
+
+admin.site.register(Bio)
+admin.site.register(Language)
+admin.site.register(Tool)
+admin.site.register(Job)
