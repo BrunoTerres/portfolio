@@ -51,3 +51,18 @@ class Job(models.Model):
 
     def __str__(self):
         return '{0}'.format(self.name)
+    
+    
+    
+class Contact(models.Model):
+    first_name =  models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    
+    class Meta:
+        ordering = ["last_name"]
+        
+    def __str__(self):
+        return '{0}, {1}'.format(self.first_name, self.last_name)
+        

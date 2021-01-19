@@ -11,4 +11,6 @@ urlpatterns = [
     path('tool/<int:pk>', views.ToolDetailView.as_view(), name='tool_detail'),
     path('languages/', views.LanguageListView.as_view(), name='languages'),
     path('language/<int:pk>', views.LanguageDetailView.as_view(), name='language_detail'),
+    path('contact/', views.ContactCreateView.as_view(), name='contact'),
+    path('thanks/', views.thanks, name='thanks'),
 ]

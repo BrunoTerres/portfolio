@@ -1,25 +1,34 @@
 import requests
 from django.shortcuts import render
 from django.views import generic
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.urls import reverse_lazy
 
-from home.models import Bio, Language, Job, Tool
+from home.models import Bio, Language, Job, Tool, Contact
 
 
 def index(request):
-    dev = Bio.objects.get(id=1)
-    jobs = Job.objects.all()
-    languages = Language.objects.all()
-    tools = Tool.objects.all()
+    
+    if (Bio.objects.exists()):
+    
+        dev = Bio.objects.get(id=1)
+        jobs = Job.objects.all()
+        languages = Language.objects.all()
+        tools = Tool.objects.all()
 
-    context = {
-        'dev': dev,
-        'jobs': jobs,
-        'languages': languages,
-        'tools': tools,
-    }
+        context = {
+            'dev': dev,
+            'jobs': jobs,
+            'languages': languages,
+            'tools': tools,
+        }
 
-    return render(request, 'home/index.html', context)
+        return render(request, 'home/index.html', context)
+
+    else:
+        return HttpResponse("<h1>ERROR<h1>")
+        
+
 
 class JobListView(generic.ListView):
     model = Job
@@ -56,3 +65,14 @@ class LanguageListView(generic.ListView):
 class LanguageDetailView(generic.DetailView):
     model = Language
     template_name = "home/language_detail.html"
+    
+    
+class ContactCreateView(generic.CreateView):
+    model = Contact
+    fields = ["first_name", "last_name", "email", "message"]
+    success_url = reverse_lazy("thanks")
+    
+    
+def thanks(request):
+    return HttpResponse("Thank you! Will get in touch soon.")
+    
