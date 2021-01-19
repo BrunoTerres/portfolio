@@ -67,9 +67,9 @@
 
     <div class="row bottom_itens">
         <div class="col-md-5 jobs">
-            <h2><a href="jobs">Jobs</a></h2>
+            <h2><a href="jobs">Jobs</a><h2>
             {% for job in jobs %}
-            <h3> {{ job.name }} </h3>
+            <h3><a href="{{ job.get_absolute_url }}">{{ job.name }}</a></h3>
             <p>{{ job.description }}</p>
             {% endfor %}
         </div>
@@ -79,8 +79,8 @@
         <div class="col-md-5 tools">
             <h2><a href="tools">Tools</a></h2>
             {% for tool in tools %}
-            <h3> {{ tool.name }} </h3>
-            <p>{{ tool.language }}</p>
+            <h3><a href="{{ tool.get_absolute_url }}">{{ tool.name }} </h3>
+            <a href="{{ tool.language.get_absolute_url }}">{{ tool.language }}</a>
             {% endfor %}
         </div>
 
