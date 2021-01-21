@@ -6,12 +6,12 @@
     <div id="header-wrapper">
         <div id="header" class="container">
             <div id="logo">
-                <h1><a href="{% url 'index' %}">Bruno Terres</a></h1>
+                <h1><a href="{% url 'home' %}">Bruno Terres</a></h1>
                 <span>A Full Stack Web Developer</span>
             </div>
             <div id="menu">
                 <ul>
-                    <li class="current_page_item"><a href="{% url 'index' %}" accesskey="1" title="">Homepage</a></li>
+                    <li class="current_page_item"><a href="{% url 'home' %}" accesskey="1" title="">Homepage</a></li>
                     <li><a href="{% url 'tools' %}" accesskey="2" title="">Tools</a></li>
                     <li><a href="{% url 'jobs'}" accesskey="3" title="">Jobs</a></li>
                     <li><a href="{% url 'languages'}" accesskey="4" title="">Languages</a></li>
@@ -24,9 +24,8 @@
             </div>
             <p> This is <strong> Bruno Terres</strong> portfolio</p>
         </div>
-    </div>
+    
 
-    <div id="wrapper2">
       <div id="three-column" class="container">
             <div>
                 <span class="arrow-down"></span>
@@ -130,7 +129,7 @@
       {% comment %} <section class="cover-tring first">
       <div class="row">
         <div class="col-md-12 bio">
-            <img src="{% static 'images/index.png' %}" alt="Avatar" width="100" height="100">
+            <img src="{% static 'images/home.png' %}" alt="Avatar" width="100" height="100">
             <h2>Time : {{ time | date:'Y/M/D' }}</h2>
             {%if dev %}
               <h1>{{ dev }}</h1>
