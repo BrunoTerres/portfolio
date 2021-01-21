@@ -1,4 +1,5 @@
 import requests
+import datetime
 from django.shortcuts import render
 from django.views import generic
 from django.http import JsonResponse, HttpResponse
@@ -9,24 +10,26 @@ from home.models import Bio, Language, Job, Tool, Contact
 
 def index(request):
     
-    if (Bio.objects.exists()):
-    
+    try:  
         dev = Bio.objects.get(id=1)
         jobs = Job.objects.all()
         languages = Language.objects.all()
         tools = Tool.objects.all()
-
+        time = datetime.datetime.now()
+    except:
+        return render(request, 'info_missing.html')
+    else:
         context = {
             'dev': dev,
             'jobs': jobs,
             'languages': languages,
             'tools': tools,
+            'time': time,
         }
 
         return render(request, 'home/index.html', context)
 
-    else:
-        return HttpResponse("<h1>ERROR<h1>")
+    
         
 
 

@@ -2,17 +2,148 @@
 
 {% block content %}
 
-<div class="container">
-
-        <div class="col-md-12 bio">
-            <img src="https://avatars3.githubusercontent.com/u/44822671?s=460&v=4" alt="Avatar" width="100" height="100">
-            <h1>{{ dev }}</h1>
-            <p>{{ dev.bio }}</p>
+  {% load static %}
+    <div id="header-wrapper">
+        <div id="header" class="container">
+            <div id="logo">
+                <h1><a href="{% url 'index' %}">Bruno Terres</a></h1>
+                <span>A Full Stack Web Developer</span>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li class="current_page_item"><a href="{% url 'index' %}" accesskey="1" title="">Homepage</a></li>
+                    <li><a href="{% url 'tools' %}" accesskey="2" title="">Tools</a></li>
+                    <li><a href="{% url 'jobs'}" accesskey="3" title="">Jobs</a></li>
+                    <li><a href="{% url 'languages'}" accesskey="4" title="">Languages</a></li>
+                </ul>
+            </div>
         </div>
+                <div id="welcome" class="container">
+            <div class="title">
+                <h2> Welcome to My Portfolio<h2>
+            </div>
+            <p> This is <strong> Bruno Terres</strong> portfolio</p>
+        </div>
+    </div>
 
+    <div id="wrapper2">
+      <div id="three-column" class="container">
+            <div>
+                <span class="arrow-down"></span>
+            </div>
+            <div id="tbox1">
+                <span class="icon icon-wrench"></span>
+                <div class="title">
+                    <h2>Fast</h2>
+                </div>
+                <p>Fast Apps made with modern Web Frameworks.</p>
+                <a href="" class="button">Learn More</a>
+            </div>
+            <div id="tbox2">
+                <span class="icon icon-wrench"></span>
+                <div class="title">
+                    <h2>Safe</h2>
+                </div>
+                <p>Fast Apps made with modern Web Frameworks.</p>
+                <a href="" class="button">Learn More</a>
+            </div>
+
+            <div id="tbox3">
+                <span class="icon icon-wrench"></span>
+                <div class="title">
+                    <h2>Responsive</h2>
+                </div>
+                <p>Fast Apps made with modern Web Frameworks.</p>
+                <a href="" class="button">Learn More</a>
+            </div>
+        </div>
+      </div>
+
+
+
+
+    <div id="wrapper3">
+        <div id="portfolio" class="container">
+            <div class="title">
+                <h2>Web Dev Portfolio<h2>
+                <span class="byline">Back-end focused Full Stack Web developer</span>
+            </div>
+            <div class="column1">
+                <div class="box">
+                    <a href="">
+                        <img src="" alt="" class="image image-full">
+                    </a>
+                    <h3>Safe Place</h3>
+                    <p> Safe Place Text</p>
+                    <a href="" class="button button-small">More</a>
+                </div>
+            </div>
+            <div class="column2">
+                <div class="box">
+                    <a href="">
+                        <img src="" alt="" class="image image-full">
+                    </a>
+                    <h3>Be the Hero</h3>
+                    <p>Be The Hero Text</p>
+                    <a href="" class="button button-small">More</a>
+                </div>
+            </div>
+            <div class="column3">
+                <div class="box">
+                    <a href="">
+                        <img src="" alt="" class="image image-full">
+                    </a>
+                    <h3>Skyscanner API</h3>
+                    <p> Skyscanner API Text</p>
+                    <a href="" class="button button-small">More</a>
+                </div>
+            </div>   
+        </div>  
+    </div>  
+
+    <div class="wrapper4">
+        <div id="footer" class="container">
+            <div>
+                <header class="title">
+                    <h2>Get in touch</h2>
+                    <span class="byline">Phasellus nec erat sit amet nibh pellentesque congue</span> </header>
+			    <ul class="contact">
+				    <li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+				    <li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+				    <li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+				    <li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+				    <li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+			    </ul>
+		    </div>
+	    </div>
+    </div>
+    <div id="copyright" class="container">
+    	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+    </div>
+    
+{% endblock %}
+
+
+
+
+
+      {% comment %} <section class="cover-tring first">
+      <div class="row">
+        <div class="col-md-12 bio">
+            <img src="{% static 'images/index.png' %}" alt="Avatar" width="100" height="100">
+            <h2>Time : {{ time | date:'Y/M/D' }}</h2>
+            {%if dev %}
+              <h1>{{ dev }}</h1>
+              <p>{{ dev.bio }}</p>
+            {% else %}
+              <p> Looks like you foggot to add the dev's bio</p>
+            {% endif %}
+        </div>
+      </div>
+      </section>
 
     <hr>
-
+  <section class="cover-thing second">
     <div class="row">
 
         <ul id="hexGrid">
@@ -36,6 +167,15 @@
               </div>
             </li>
 
+
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="">
+                  <h1>Safe</h1>
+                  <p>Some sample</p>
+                </a>
+              </div>
+            </li>
 
       
             <li class="hex">
@@ -62,37 +202,47 @@
         </ul>
 
     </div>
-
+    </section>
     <hr>
-
+  <section class="cover-thing third">
     <div class="row bottom_itens">
 
-        <div class="col-md-5 jobs">
-            <h2><a href="jobs">Jobs</a><h2>
-            {% for job in jobs %}
-            <h3><a href="{{ job.get_absolute_url }}">{{ job.name }}</a></h3>
-            <p>{{ job.description }}</p>
-            {% endfor %}
+        <div class="col jobs">
+            <h2><a href="jobs" class="links">Jobs</a><h2>
+            {% if jobs %}  
+              {% for job in jobs %}
+                  <h3><a href="{{ job.get_absolute_url }}" class="links">{{ job.name }}</a></h3>
+                  <p>{{ job.description }}</p>
+              {% endfor %}
+            {% else %}
+              <p>There are no jobs available</p>
+            {% endif %}
         </div>
 
-        <hr>
 
-        <div class="col-md-5 tools">
-            <h2><a href="tools">Tools</a></h2>
-            {% for tool in tools %}
-            <h3><a href="{{ tool.get_absolute_url }}">{{ tool.name }} </h3>
-            <a href="{{ tool.language.get_absolute_url }}">{{ tool.language }}</a>
-            {% endfor %}
+        <div class="col tools">
+            <h2><a href="tools" class="links">Tools</a></h2>
+            {% if tools %}  
+              {% for tool in tools %}
+                
+                <div class="link-group">
+                  <h3>
+                    <a href="{{ tool.get_absolute_url }}" class="links">{{ tool.name }}</a>
+                    <a href="{{ tool.language.get_absolute_url }}" class="links sm-link">{{ tool.language }}</a>
+                  </h3>
+                </div>
+                  
+              {% endfor %}
+            {% else %}
+              <p>There are no tools available</p>
+            {% endif %}
         </div>
 
     </div>
-
-    <div>
+    </section>
+    <div class="row">
 
       <h2>Want to Build a good, fast and secure web application?</h2>
 
       <p><a href="contact">Contact me</a></p>
-    </div>
-    
-</div>
-{% endblock %}
+    </div> {% endcomment %}

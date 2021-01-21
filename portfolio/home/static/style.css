@@ -1,25 +1,61 @@
-.jobs {
-    background-color: rgba(0, 128, 128, 0.8);
-    padding: 2em;
-    border-radius: 10%;
-    color: white;
+
+
+.first {
+  background-color: #333;
 }
 
-.tools {
-    background-color: rgba(0, 128, 128, 0.8);
+.second {
+  background-color: #eee;
+}
+
+.third {
+  background-color: #f06;
+}
+
+.jobs {
+    background-color: #22212c;
     padding: 2em;
     border-radius: 10%;
     color: white;
+    margin: 1em;
+}
+
+
+.tools {
+    background-color:#22212c;
+    padding: 2em;
+    border-radius: 10%;
+    color: white;
+    margin: 1em;
 }
 
 .bio {
-    background-color: rgba(0, 128, 128, 0.8);
+    background-color:#22212c;
     padding: 2em;
     border-radius: 10%;
     color: white;
 }
 
+.links {
+  color: white;
+  text-decoration: none;
+}
 
+.links:hover {
+  color: #3B506C;
+}
+
+.sm-link {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+
+.link-group {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 #hexGrid {
   display: flex;
@@ -87,7 +123,7 @@
   width: 100%;
   padding: 5%;
   box-sizing:border-box;
-  background-color: rgba(0, 128, 128, 0.8);
+  background-color:#3b7037;
   font-weight: 300;
   -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
           transition:          transform .2s ease-out, opacity .3s ease-out;
