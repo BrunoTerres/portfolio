@@ -1,4 +1,6 @@
 /* Style the header with a grey background and some padding */
+
+
 .header {
   overflow: hidden;
   background-color: #67128F;
@@ -49,6 +51,36 @@
   .header-right {
     float: left;
   }
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: 67128F;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+.return-button {
+  display: inline-block;
+  color: #FFF;
+  text-align: center;
+  padding: 12px;
+  margin-left: 2em;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  background: #67128F;
+  border-radius: 8px;
+  letter-spacing: 0.10em;
+  text-decoration: none;
+}
+.return-button:hover {
+  font-weight: bold;
 }
 
 .first {

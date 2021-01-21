@@ -34,10 +34,10 @@
         {% block content %}{% endblock %}
     </div>
 
-    <div>
-      {% block footer %}
-            <input type=button value="Previous Page" onClick="javascript:history.go(-1);">
-      {% endblock %}
-    </div>
+    {% block footer %}
+        <input class="return-button" type=button value="Previous Page" onClick="javascript:history.go(-1);">
+      <div class="footer">
+      </div>
+    {% endblock %}
 </body>
 </html> 
