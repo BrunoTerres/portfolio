@@ -284,6 +284,9 @@ ul.contact li a:before
 
 #menu li:hover a, #menu li.active a, #menu li.active span
 {
+    border-radius: 8px;
+    background-color: #ddd;
+    color: black;
 }
 
 #menu .current_page_item a
