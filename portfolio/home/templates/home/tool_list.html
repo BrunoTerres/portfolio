@@ -1,14 +1,18 @@
 {% extends "base_pages.html" %}
 
 {% block content %}
-
+{% load static %}
     <h1>Tool List</h1>
         {% if tool_list %}
-            <ul>
+            <div class="row">
                 {% for tool in tool_list %}
-                    <li>
-                        <a href="{{ tool.get_absolute_url }}">{{ tool.name }}</a><p><a href="{{ tool.language.get_absolute_url }}">{{ tool.language }}</a></p>
-                    </li>   
+                    <div class="col">
+                        <img src="{% static 'images/'|add:tool.name|add:'.png' %}">
+                        <h3>
+                            <a href="{{ job.get_absolute_url }}">{{ job.name }}</a>
+                        </h3>
+                        <p> {{ tool.description }}</p>                       
+                    </div>
                 {% endfor %}
             </ul>
         {% else %}

@@ -140,9 +140,19 @@ ul.contact li a:before
 /* Heading Titles                                                                */
 /*********************************************************************************/
 
-.title
+.job-title
 {
-    margin-bottom: 3em;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+}
+
+.job-description 
+{
+    height: 60px;
 }
 
 .title h2
@@ -151,12 +161,12 @@ ul.contact li a:before
     color: rgba(255,255,255,0.9);
 }
 
-.title .byline
+.byline
 {
+    margin-bottom: 2em;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    font-weight: 400;
-    font-size: 1.1em;
+    font-size: 3em;
     color: #6F6F6F;
 }
 
@@ -414,16 +424,10 @@ ul.contact li a:before
 /* .column4 */
 .column
 {
-    margin-left: 3.5em;
+    margin-left: 4.5em;
     max-width: 282px;
 }
 
-
-.column
-{
-    float: left;
-    margin-left: 150px;
-}
 
 
 /*********************************************************************************/

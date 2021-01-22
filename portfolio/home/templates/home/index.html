@@ -8,8 +8,7 @@
         <div id="portfolio" class="container">
 
             <div class="title">
-                <h2>Web Dev Portfolio<h2>
-                <span class="byline">Back-end focused Full Stack Web developer</span>
+                <h1 class="byline">Experience</h1>
             </div>
 
             <div class="row ">
@@ -21,8 +20,8 @@
                     <a href="{{ job.get_absolute_url }}">
                       <img src="{% static 'images/'|add:job.name|add:'.png' %}"  width="160" height="160" alt="job logo" >
                     </a>
-                    <h3>{{ job.name }}</h3>
-                    <p>{{ job.description }}</p>
+                    <h3 class="job-title">{{ job.name }}</h3>
+                    <p class="job-description">{{ job.description }}</p>
                     <a href="{{ job.get_absolute_url }}" class="button button-small">More</a>
                   </div>
                 </div>
