@@ -4,48 +4,36 @@
 
   {% load static %}
 
-
-
-
     <div id="wrapper3">
         <div id="portfolio" class="container">
+
             <div class="title">
                 <h2>Web Dev Portfolio<h2>
                 <span class="byline">Back-end focused Full Stack Web developer</span>
             </div>
-            <div class="column1">
-                <div class="box">
-                    <a href="">
-                        <img src="" alt="" class="image image-full">
+
+            <div class="row ">
+            
+              {% for job in jobs %}
+
+                <div class="col column">
+                  <div class="box">
+                    <a href="{{ job.get_absolute_url }}">
+                      <img src="{% static 'images/'|add:job.name|add:'.png' %}"  width="160" height="160" alt="job logo" >
                     </a>
-                    <h3>Safe Place</h3>
-                    <p> Safe Place Text</p>
-                    <a href="" class="button button-small">More</a>
+                    <h3>{{ job.name }}</h3>
+                    <p>{{ job.description }}</p>
+                    <a href="{{ job.get_absolute_url }}" class="button button-small">More</a>
+                  </div>
                 </div>
+            
+              {% endfor %}
+            
             </div>
-            <div class="column2">
-                <div class="box">
-                    <a href="">
-                        <img src="" alt="" class="image image-full">
-                    </a>
-                    <h3>Be the Hero</h3>
-                    <p>Be The Hero Text</p>
-                    <a href="" class="button button-small">More</a>
-                </div>
-            </div>
-            <div class="column3">
-                <div class="box">
-                    <a href="">
-                        <img src="" alt="" class="image image-full">
-                    </a>
-                    <h3>Skyscanner API</h3>
-                    <p> Skyscanner API Text</p>
-                    <a href="" class="button button-small">More</a>
-                </div>
-            </div>   
         </div>  
     </div>  
-
-    
     
 {% endblock %}
+
+
+

@@ -7,7 +7,7 @@
             <ul>
                 {% for tool in tool_list %}
                     <li>
-                        <a href="{{ tool.get_absolute_url }}">{{ tool.name }}</a>
+                        <a href="{{ tool.get_absolute_url }}">{{ tool.name }}</a><p><a href="{{ tool.language.get_absolute_url }}">{{ tool.language }}</a></p>
                     </li>   
                 {% endfor %}
             </ul>

@@ -5,7 +5,7 @@ html, body {
 body {
     margin: 0px;
     padding: 0px;
-    background: #8C16C3 url(images/img01.jpg) repeat;
+    background: #8C16C3 url(images/img02.png) repeat;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 12pt;
 	font-weight: 400;
@@ -48,43 +48,6 @@ a:hover {
 }
 
 
-/************************************************************************************************
-/* Image Style 
-/************************************************************/
-
-.image {
-    display: inline-block;
-    border: 1px solid rgb(0, 0, .1);
-}
-
-.image img {
-    display: block;
-    width: 100%;
-}
-
-.image-full {
-    display:block;
-    width: 100%;
-    margin: 0 0 3em 0;
-}
-
-.image-left
-{
-    float: left;
-    margin: 0 2em 2em 0;
-}
-.image-centered
-{
-    display: block;
-    margin: 0 0 2em 0;
-}
-
-.image-centered img
-{
-    margin: 0 auto;
-    width: auto;
-}
-
 
 /*********************************************************************************/
 /* Social Icon Styles                                                            */
@@ -119,7 +82,7 @@ ul.contact li a
 ul.contact li a:before
 {
     display: inline-block;
-    background: #67128F;
+    background: #037a15;
     width: 80px;
     height: 80px;
     line-height: 80px;
@@ -138,7 +101,7 @@ ul.contact li a:before
     display: inline-block;
     margin-top: 2em;
     padding: 1em 2em 1em 2em;
-    background: #67128F;
+    background: #037a15;
     border-radius: 8px;
     letter-spacing: 0.20em;
     line-height: 1.8em;
@@ -166,7 +129,7 @@ ul.contact li a:before
 .button-small
 {
     padding: 0.9em 2em;
-    background: #67128F;
+    background: #037a15;
     border-radius: 5px;
     line-height: 1.8em;
     font-size: 1em;
@@ -291,20 +254,10 @@ ul.contact li a:before
 
 #menu .current_page_item a
 {
-    background: #67128F;
+    background: #037a15 ;
     border-radius: 8px;
     color: #FFF;
 }
-
-
-/*********************************************************************************/
-/* Banner                                                                        */
-/*********************************************************************************/
-
-#banner
-{
-}
-
 
 
 /*********************************************************************************/
@@ -334,38 +287,6 @@ ul.contact li a:before
     overflow: hidden;
     padding: 8em 0em 4em 0em;
 }
-
-
-
-/*********************************************************************************/
-/* Welcome                                                                       */
-/*********************************************************************************/
-
-#welcome
-{
-    overflow: hidden;
-    width: 1000px;
-    padding: 8em 100px 0em 100px;
-    text-align: center;
-    color: rgba(0,0,0,0.6);
-}
-
-#welcome .content
-{
-    padding: 0em 8em;
-}
-
-#welcome .title h2
-{
-    color: rgba(0,0,0,0.8);
-}
-
-#welcome a,
-#welcome strong
-{
-    color: rgba(0,0,0,0.8);
-}
-
 
 
 /*********************************************************************************/
@@ -490,26 +411,20 @@ ul.contact li a:before
 }
 
 
-.column1,
-.column2,
-.column3,
-.column4
+/* .column4 */
+.column
 {
     margin-left: 3.5em;
-    width: 282px;
+    max-width: 282px;
 }
 
-.column1,
-.column2,
-.column3
+
+.column
 {
     float: left;
-    margin-right: 24px;
+    margin-left: 150px;
 }
 
-.column4
-{
-}
 
 /*********************************************************************************/
 /* Three Columns                                                                 */
@@ -520,6 +435,7 @@ ul.contact li a:before
     overflow: hidden;
     text-align: center;
     color: rgba(255,255,255,.6);
+    margin-top: 200px;
 }
 
 #three-column h2
@@ -542,7 +458,7 @@ ul.contact li a:before
     width: 150px;
     height: 150px;
     border-radius: 100px;
-    border: 6px solid #67128F;
+    border: 6px solid #037a15;
     text-align: center;
     color: #FFF;
     
