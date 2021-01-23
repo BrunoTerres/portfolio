@@ -8,7 +8,7 @@
         <div id="portfolio" class="container">
 
             <div class="title">
-                <h1 class="byline">Experience</h1>
+                <h1 id="experience"  class="byline">Experience</h1>
             </div>
 
             <div class="row ">
@@ -21,7 +21,7 @@
                       <img src="{% static 'images/'|add:job.name|add:'.png' %}"  width="160" height="160" alt="job logo" >
                     </a>
                     <h3 class="job-title">{{ job.name }}</h3>
-                    <p class="job-description">{{ job.description }}</p>
+                    <p class="job-description">{{ job.short_description }}</p>
                     <a href="{{ job.get_absolute_url }}" class="button button-small">More</a>
                   </div>
                 </div>

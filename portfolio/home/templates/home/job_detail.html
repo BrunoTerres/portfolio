@@ -1,11 +1,15 @@
 {% extends "base_pages.html" %}
-
+{% load static %}
 {% block content %}
 
-    <h1> {{ job.name }} </h1>
+    <div class="container job-box">
 
-    <p> {{ job.description }}</p>
+        <img src="{% static 'images/'|add:job.name|add:'.png' %}"  width="160" height="160" alt="job logo" >
+        <h1> {{ job.name }} </h1>
 
+        <p> {{ job.description }}</p>
+    
+    </div>
 
     
 {% endblock %}

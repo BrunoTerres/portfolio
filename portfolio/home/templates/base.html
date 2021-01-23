@@ -78,9 +78,9 @@ Released   : 20131010
             <div id="menu">
                 <ul>
                     <li><a href="{% url 'tools' %}" accesskey="2" title="">Skills</a></li>
-                    <li><a href="{% url 'jobs' %}" accesskey="3" title="">Experience</a></li>
-                    <li><a href="{% url 'jobs' %}" accesskey="3" title="">Contac</a></li>
-                    <li><a href="{% url 'languages' %}" accesskey="4" title="">About</a></li>
+                    <li><a href="#experience" accesskey="3" title="">Experience</a></li>
+                    <li><a href="{% url 'contact' %}" accesskey="3" title="">Contact</a></li>
+                    <li><a href="{% url 'bio' %}" accesskey="4" title="">About</a></li>
                 </ul>
             </div>
             <div class="arrow-down">
@@ -103,7 +103,7 @@ Released   : 20131010
                     <h2>Fast</h2>
                 </div>
                 <p>Fast Apps made with modern Web Frameworks.</p>
-                <a href="" class="button button-small">More</a>
+                <a href="{% url 'fast' %}" class="button button-small">More</a>
             </div>
             <div id="tbox2">
                 <span class="icon icon-wrench"></span>
@@ -111,7 +111,7 @@ Released   : 20131010
                     <h2>Safe</h2>
                 </div>
                 <p>Fast Apps made with modern Web Frameworks.</p>
-                <a href="" class="button button-small">More</a>
+                <a href="{% url 'safe' %}" class="button button-small">More</a>
             </div>
 
             <div id="tbox3">
@@ -120,7 +120,7 @@ Released   : 20131010
                     <h2>Responsive</h2>
                 </div>
                 <p>Fast Apps made with modern Web Frameworks.</p>
-                <a href="" class="button button-small">More</a>
+                <a href="{% url 'responsive' %}" class="button button-small">More</a>
             </div>
         </div>
     </div>

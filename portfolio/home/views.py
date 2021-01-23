@@ -27,10 +27,19 @@ def index(request):
             'time': time,
         }
 
-        return render(request, 'home/index.html', context)
+        return render(request, 'home/index.html', context)        
 
+class BioView(generic.TemplateView):
+    template_name = "home/bio.html"
+
+class SafeView(generic.TemplateView):
+    template_name = "home/safe.html"
+
+class FastView(generic.TemplateView):
+    template_name = "home/fast.html"
     
-        
+class ResponsiveView(generic.TemplateView):
+    template_name = "home/responsive.html"
 
 
 class JobListView(generic.ListView):

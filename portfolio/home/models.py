@@ -4,9 +4,10 @@ from django.urls import reverse
 
 class Bio(models.Model):
     name = models.CharField(max_length=50)
-    bio = models.TextField(max_length=100)
+    short_description = models.CharField(max_length=100, null=True)
+    description = models.TextField(null=True)
     image_name = models.CharField(max_length=50, null=True)
-    image = models.ImageField(upload_to='image', null=True)
+    image = models.ImageField(upload_to='home/static/images', null=True)
 
     def __str__(self):
         return '{0}'.format(self.name) 
@@ -14,9 +15,10 @@ class Bio(models.Model):
 
 class Language(models.Model):
     name = models.CharField(max_length=50)
-    description = models.TextField(max_length=100)
+    short_description = models.CharField(max_length=100, null=True)
+    description = models.TextField(null=True)
     image_name = models.CharField(max_length=50, null=True)
-    image =  models.ImageField(upload_to='image', null=True)
+    image =  models.ImageField(upload_to='home/static/images', null=True)
 
     def get_absolute_url(self):
         return reverse('language_detail', args=[str(self.id)])
@@ -28,9 +30,10 @@ class Language(models.Model):
 class Tool(models.Model):
     name = models.CharField(max_length=50)
     language = models.ForeignKey(Language, on_delete=models.SET_NULL, null=True)
-    description = models.TextField(max_length=100)
+    short_description = models.CharField(max_length=100, null=True)
+    description = models.TextField(null=True)
     image_name = models.CharField(max_length=50, null=True)
-    image = models.ImageField(upload_to='image', null=True)
+    image = models.ImageField(upload_to='home/static/images', null=True)
 
     def get_image(self):
         if self.img_photo and hasattr(self.img_photo, 'url'):
@@ -46,10 +49,11 @@ class Tool(models.Model):
 
 class Job(models.Model):
     name = models.CharField(max_length=50)
-    description = models.TextField(max_length=100)
+    short_description = models.CharField(max_length=100, null=True)
+    description = models.TextField(null=True)
     tool = models.ManyToManyField(Tool, help_text="Tool used in the Job")
     image_name = models.CharField(max_length=50, null=True)
-    image = models.ImageField(upload_to='image', null=True)
+    image = models.ImageField(upload_to='home/static/images', null=True)
 
 
     def display_tool(self):
