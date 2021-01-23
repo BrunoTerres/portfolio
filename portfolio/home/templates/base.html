@@ -70,7 +70,7 @@ Released   : 20131010
     {% block header %}
 
     <div id="header-wrapper">
-        <div id="header" class="container">
+        <div id="header" class="container mmenu">
             <div id="logo">
                 <h1><a href="{% url 'home' %}">Bruno Terres</a></h1>
                 <span>A Full Stack Web Developer</span>
@@ -83,19 +83,27 @@ Released   : 20131010
                     <li><a href="{% url 'languages' %}" accesskey="4" title="">About</a></li>
                 </ul>
             </div>
+            <div class="arrow-down">
+                <a href="#welcome-to">CLIQUE</a>
+            </div>
+
         </div>
 
+
         <div id="three-column" class="container">
+
             <div>
-                <span class="arrow-down"></span>
+                <h2 id="welcome-to">Welcome to my site</h2>
+                <p> I'm a backend focused full stack web developer</p>
             </div>
+
             <div id="tbox1">
                 <span class="icon icon-wrench"></span>
                 <div class="title">
                     <h2>Fast</h2>
                 </div>
                 <p>Fast Apps made with modern Web Frameworks.</p>
-                <a href="" class="button">Learn More</a>
+                <a href="" class="button button-small">More</a>
             </div>
             <div id="tbox2">
                 <span class="icon icon-wrench"></span>
@@ -103,7 +111,7 @@ Released   : 20131010
                     <h2>Safe</h2>
                 </div>
                 <p>Fast Apps made with modern Web Frameworks.</p>
-                <a href="" class="button">Learn More</a>
+                <a href="" class="button button-small">More</a>
             </div>
 
             <div id="tbox3">
@@ -112,7 +120,7 @@ Released   : 20131010
                     <h2>Responsive</h2>
                 </div>
                 <p>Fast Apps made with modern Web Frameworks.</p>
-                <a href="" class="button">Learn More</a>
+                <a href="" class="button button-small">More</a>
             </div>
         </div>
     </div>
