@@ -3,18 +3,20 @@ from django.urls import reverse
 
 
 class Bio(models.Model):
-    name = models.CharField(max_length=100)
-    bio = models.TextField()
-    avatar = models.ImageField()
+    name = models.CharField(max_length=50)
+    bio = models.TextField(max_length=100)
+    image_name = models.CharField(max_length=50, null=True)
+    image = models.ImageField(upload_to='image', null=True)
 
     def __str__(self):
         return '{0}'.format(self.name) 
 
 
 class Language(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    image =  models.ImageField()
+    name = models.CharField(max_length=50)
+    description = models.TextField(max_length=100)
+    image_name = models.CharField(max_length=50, null=True)
+    image =  models.ImageField(upload_to='image', null=True)
 
     def get_absolute_url(self):
         return reverse('language_detail', args=[str(self.id)])
@@ -24,10 +26,11 @@ class Language(models.Model):
         return '{0}'.format(self.name)
 
 class Tool(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=50)
     language = models.ForeignKey(Language, on_delete=models.SET_NULL, null=True)
-    description = models.TextField()
-    image = models.ImageField(null=True)
+    description = models.TextField(max_length=100)
+    image_name = models.CharField(max_length=50, null=True)
+    image = models.ImageField(upload_to='image', null=True)
 
     def get_image(self):
         if self.img_photo and hasattr(self.img_photo, 'url'):
@@ -42,10 +45,11 @@ class Tool(models.Model):
         return '{0}'.format(self.name)
 
 class Job(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    Tool = models.ManyToManyField(Tool, help_text="Tool used in the Job")
-    image = models.ImageField(null=True)
+    name = models.CharField(max_length=50)
+    description = models.TextField(max_length=100)
+    tool = models.ManyToManyField(Tool, help_text="Tool used in the Job")
+    image_name = models.CharField(max_length=50, null=True)
+    image = models.ImageField(upload_to='image', null=True)
 
 
     def display_tool(self):
