@@ -60,6 +60,10 @@ Released   : 20131010
     {% block title %}
         <title>Home</title>
     {% endblock %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'home.css' %}"> 
@@ -79,7 +83,7 @@ Released   : 20131010
                 <ul>
                     <li><a href="{% url 'tools' %}" accesskey="2" title="">Skills</a></li>
                     <li><a href="#experience" accesskey="3" title="">Experience</a></li>
-                    <li><a href="{% url 'contact' %}" accesskey="3" title="">Contact</a></li>
+                    <li><a href="{% url 'contact' %}" accesskey="3" title="" class="contact-btn">Contact</a></li>
                     <li><a href="{% url 'bio' %}" accesskey="4" title="">About</a></li>
                 </ul>
             </div>
@@ -156,4 +160,10 @@ Released   : 20131010
 
     {% endblock %}
 </body>
+
+<script src="{% static 'assets/js/bootstrap.js' %}"></script>
+<script src="{% static 'assets/js/jquery.js' %}"></script>
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+<!-- You can alternatively load the minified version -->
+<script src="{% static 'js/jquery.bootstrap.modal.forms.min.js' %}"></script>
 </html> 

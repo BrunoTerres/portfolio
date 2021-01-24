@@ -6,6 +6,7 @@ from django.http import JsonResponse, HttpResponse
 from django.urls import reverse_lazy
 
 from home.models import Bio, Language, Job, Tool, Contact
+from home.forms import ContactForm
 
 
 def index(request):
@@ -81,7 +82,7 @@ class LanguageDetailView(generic.DetailView):
     
 class ContactCreateView(generic.CreateView):
     model = Contact
-    fields = ["first_name", "last_name", "email", "message"]
+    form_class = ContactForm
     success_url = reverse_lazy("thanks")
     
     

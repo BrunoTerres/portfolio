@@ -83,6 +83,26 @@
   font-weight: bold;
 }
 
+.form-box {
+}
+
+.form {
+  color: white;
+}
+
+.about-box {
+  text-align: center;
+  margin: 4em;
+}
+
+.about-title {
+  color: white;
+}
+
+.about-text {
+  color: white;
+}
+
 .first {
   background-color: #333;
 }
