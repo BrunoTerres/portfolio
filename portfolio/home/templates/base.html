@@ -62,8 +62,6 @@ Released   : 20131010
     {% endblock %}
 
     {% load static %}
-    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'home.css' %}"> 
@@ -74,11 +72,13 @@ Released   : 20131010
     {% block header %}
 
     <div id="header-wrapper">
+        
         <div id="header" class="container mmenu">
             <div id="logo">
                 <h1><a href="{% url 'home' %}">Bruno Terres</a></h1>
                 <span>A Full Stack Web Developer</span>
             </div>
+        
             <div id="menu">
                 <ul>
                     <li><a href="{% url 'tools' %}" accesskey="2" title="">Skills</a></li>
@@ -87,10 +87,11 @@ Released   : 20131010
                     <li><a href="{% url 'bio' %}" accesskey="4" title="">About</a></li>
                 </ul>
             </div>
+            
             <div class="arrow-down">
-                <a href="#welcome-to">CLIQUE</a>
+                <a href="#three-column" class="icon"><img class="img-responsive contact-img"src="{% static 'images/seta.png' %}" width="50px" height="50px" alt="whats app link"></a>                
             </div>
-
+        
         </div>
 
 
@@ -142,13 +143,13 @@ Released   : 20131010
             <div>
                 <header class="title">
                     <h2>Get in touch</h2>
-                    <span class="byline">Phasellus nec erat sit amet nibh pellentesque congue</span> </header>
+                    <span class="byline">Find me on social medias</span> 
+                </header>
 			    <ul class="contact">
-				    <li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
-				    <li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
-				    <li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
-				    <li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
-				    <li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+				    <li><a href="#" class="icon icon-twitter"><img class="img-responsive contact-img"src="{% static 'images/linkedin.png' %}" width="50px" height="50px" alt="linkedin link">
+				    <li><a href="#" class="icon icon-facebook"><img class="img-responsive contact-img"src="{% static 'images/github.png' %}" width="50px" height="50px" alt="github link"></a></li>
+				    <li><a href="#" class="icon icon-dribbble"><img class="img-responsive contact-img"src="{% static 'images/messager.png' %}" width="50px" height="50px" alt="messager link"></a></li>
+				    <li><a href="#" class="icon icon-tumblr"><img class="img-responsive contact-img"src="{% static 'images/whats.png' %}" width="50px" height="50px" alt="whats app link"></a></li></a></li>
 			    </ul>
 		    </div>
 	    </div>
@@ -161,9 +162,4 @@ Released   : 20131010
     {% endblock %}
 </body>
 
-<script src="{% static 'assets/js/bootstrap.js' %}"></script>
-<script src="{% static 'assets/js/jquery.js' %}"></script>
-<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
-<!-- You can alternatively load the minified version -->
-<script src="{% static 'js/jquery.bootstrap.modal.forms.min.js' %}"></script>
 </html> 
