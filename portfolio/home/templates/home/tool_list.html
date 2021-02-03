@@ -7,7 +7,7 @@
             <div class="row">
                 {% for tool in tool_list %}
                     <div class="col">
-                        <img src="{% static 'images/'|add:tool.name|add:'.png' %}">
+                        <img class="tool-img" src="{% static 'images/'|add:tool.name|add:'.png' %}" width="70px" height="70px">
                         <h3>
                             <a href="{{ job.get_absolute_url }}">{{ job.name }}</a>
                         </h3>
