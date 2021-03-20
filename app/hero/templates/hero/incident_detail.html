@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Incident Detail - Hero | Portfolio</title>
+{% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class='col-md-6 incident-detail'>
+        <div class="col-md-10 incident-description">
+            <h1>{{ incident.title }}</h1>
+            <p><strong>NGO:</strong><a href=""> {{ incident.ngo }} </a></p>
+            <p> {{ incident.description }} </p>
+            <p><strong>Value:</strong> {{ incident.value }} </p>
+        </div>
+        <div class="col-md-8 incident-detail-button">
+            <h3>Be The Hero</h3>
+            <h3>Get in touch!</h3>
+            <a href="https://api.whatsapp.com/send?phone=+55{{ incident.ngo.DDD }}{{ incident.ngo.whatsapp }}" class="button">WhatsApp</a>
+            <a href="" class="button">Email</a>
+        </form>
+        </div>
+    </div>
+    <div class='col-md-5 '>
+        <div class="col-md-8">
+            <img src="/mediafiles/heroes.png" alt="Heroes" />
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base_home/base_pages.html" %}
+
+{% block title %}
+    <title>Get in Touch - Bruno Terres</title>
+{% endblock %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+
+    <div class="form-box row justify-content-center">
+        
+        <div class="col-6 contact-text">
+            <h1>Let's Build Somenthing Great Together!</h1>
+            
+            <img class="img-responsive contact-img"src="{% static 'images/linkedin.png' %}" width="50px" height="50px" alt="linkedin link">
+            <img class="img-responsive contact-img"src="{% static 'images/github.png' %}" width="50px" height="50px" alt="github link">
+            <img class="img-responsive contact-img"src="{% static 'images/messager.png' %}" width="50px" height="50px" alt="messager link">
+            <img class="img-responsive contact-img"src="{% static 'images/whats.png' %}" width="50px" height="50px" alt="whats app link">
+        </div>
+        
+        <div class="col-6">
+            <h1 class="mt-2 form-title">Get in touch</h1>
+            <hr class="mt-0 mb-4">
+        
+            <div class="form">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div>
+                        {{ form.name | as_crispy_field }}
+                        {{ form.subject | as_crispy_field }}
+                        {{ form.from_email | as_crispy_field }}
+                        {{ form.message | as_crispy_field }}
+                    </div>
+                    <div class="form-actions">
+                      <button type="submit" class="btn btn-success">Send</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>    
+    </div>
+{% endblock %}
+

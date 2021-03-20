@@ -1,0 +1,39 @@
+ body {
+     background:white;
+ }
+
+.safe-video {
+    margin: auto;
+    text-align: center;
+    padding: 2em;
+}
+
+.safe-video video {
+    position: relative;
+    top: 2em;
+}
+
+.safe-description {
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+}
+
+.safe-description img {
+    position: relative;
+    bottom: 1em;
+}
+
+
+.safe-description p {
+    position: relative; 
+    top: 1em;
+    color: black;
+}
+
+.safe-description a {
+    position: relative; 
+    top: 2em;
+    text-decoration: none;
+    color: green;
+}

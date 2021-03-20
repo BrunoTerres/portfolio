@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Hyacinth 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131010
+-->
+
+<html>
+<head>    
+    <meta charset="utf-8">
+    <!-- Add here the kaywords that describe the project -->
+     
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    {% block head-meta %}    
+    <meta name="keywords" content="portfolio, web dev, django">
+    <meta name="description" content="Hi, I'm Bruno Terres a Back-end Web Developer and this is my portfoli. Welcome!">
+    {% endblock %}
+
+    {% block title %}
+    <title>Bruno Terres - Portfolio | Django</title>
+    {% endblock %}
+
+
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/pages.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"> 
+    {% block style %}
+
+    {% endblock %}
+</head> 
+<body>
+
+    {% block header %}
+
+    <div id="header-wrapper">
+        
+        <div id="header" class="container mmenu">
+            <div id="logo">
+                <h1><a href="{% url 'home:home' %}">Bruno Terres</a></h1>
+                <span>A Full Stack Web Developer</span>
+            </div>
+        
+            <div id="menu">
+                <ul>
+                    <li><a href="{% url 'home:tools' %}" accesskey="2" title="">Tools</a></li>
+                    <li><a href="#portfolio" accesskey="3" title="">Experience</a></li>
+                    <li><a href="{% url 'home:contact' %}" accesskey="3" title="" class="contact-btn">Contact</a></li>
+                    <li><a href="{% url 'home:bio' %}" accesskey="4" title="">About</a></li>
+                </ul>
+
+            </div>
+            <ul class="actions arrow-down">
+                <a href="#go-to" class="icon"><img class="img-responsive contact-img"src="/mediafiles/down-arrow.svg" width="50px" height="50px" alt="whats app link"></a>                
+            </ul>
+        </div>
+
+        <div id="go-to"></div>
+
+        <div id="three-column" class="container">
+
+            <div>
+                <h2 id="welcome-to">Welcome to my site</h2>
+                <p class="welcome-txt">Building web applications with technologies that take seriously some of the main challenges of industry 4.0</p>
+                <p></p>
+            </div>
+
+            <div id="tbox1">
+                <div class="icon icon-wrench atribute-img">
+                    <img src='/mediafiles/lighting.svg' alt="Fast" width="100" height="100"/>
+                </div>
+                <div class="title">
+                    <h2>FAST</h2>
+                </div>
+            </div>
+            <div id="tbox2">
+                <div class="icon icon-wrench atribute-img">
+                    <img src='/mediafiles/cloud-computing.svg' alt="Cloud Computing" width="100" height="100"/>
+                </div>
+                <div class="title">
+                    <h2>CLOUD <br>BASED</h2>
+                </div>
+                <a href="#portfolio" class="button-exp button button-small" accesskey="3" title="">Experience</a>
+            </div>
+
+            <div id="tbox3">
+                <div class="icon icon-wrench atribute-img">
+                    <img src='/mediafiles/shield.svg' alt="Safe" width="100" height="100"/>
+                </div>
+                <div class="title">
+                    <h2>SAFE</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {% endblock %}
+
+    <div>
+        <div id="wrapper3">
+            <div id="portfolio" class="container">
+    
+                <div class="title">
+                    <h1 id="experience"  class="byline">Experience</h1>
+                </div>
+    
+                <div class="row ">
+    
+                    <div class="col column">
+                      <div class="box">
+
+                        <a href="{% url 'hero:index' %}">
+                            <img src='/mediafiles/logo.svg' alt="Be The Hero" width="100" height="100"/>
+                        </a>
+
+                        <h3 class="job-title">Be The Hero</h3>
+                        <p class="job-description">Application to connect NGOs and other institutions to people who are available to help.</p>
+                        
+                        <a href="{% url 'hero:index' %}" class="button button-small">More</a>
+                       
+                        </div>
+                    </div>
+
+                    <div class="col column">
+                        <div class="box">
+  
+                            <a href="{% url 'blog:home' %}">
+                                <img src='/mediafiles/blog.jpeg' alt="Blog" width="100" height="100"/>
+                            </a>
+  
+                            <h3 class="job-title">Django Blog</h3>
+                            <p class="job-description">A generic Django Blog Web App that receive Posts and Comments.</p>
+                          
+                            <a href="{% url 'blog:home' %}" class="button button-small">More</a>
+                          
+                        </div>
+                      </div>
+
+                      <div class="col column">
+                        <div class="box">
+  
+                            <a href="">
+                                <img src='/mediafiles/safeplace.png' alt="Safe Place" width="100" height="100"/>
+                            </a>
+  
+                            <h3 class="job-title">Safe place</h3>
+                            <p class="job-description">A Web App developed to make shared environments safer in Covid-19 pandemic times.</p>
+                          
+                            <a href="{% url 'safe:home' %}" class="button button-small">More</a>
+                        
+                        </div>
+                      </div>
+                
+                </div>
+            </div>  
+        </div>  
+    </div>
+
+    {% block footer %}
+
+    <div class="wrapper4">
+        <div id="footer" class="container">
+            <div>
+                <header class="title">
+                    <h2>Get in touch</h2>
+                    <span class="byline">Let's build something great together!</span> 
+                </header>
+
+			    <ul class="contact row">
+				    <li class="col-md-3"><a href="https://github.com/BrunoTerres" class="icon icon-github"><img class="img-responsive contact-img"src="/mediafiles/github.svg" width="50px" height="50px" alt="linkedin link">
+				    <li class="col-md-3" ><a href="{% url 'home:contact' %}" class="icon icon-gmail"><img class="img-responsive contact-img"src="/mediafiles/gmail.svg" width="50px" height="50px" alt="github link"></a></li>
+				    <li class="col-md-3"><a href="https://www.linkedin.com/in/bruno-terres-26073a15a/" class="icon icon-linkedin"><img class="img-responsive contact-img"src="/mediafiles/linkedin.svg" width="50px" height="50px" alt="messager link"></a></li>
+				    <li class="col-md-3"><a href="https://api.whatsapp.com/send?phone=+5541991991826" class="icon icon-whatsapp"><img class="img-responsive contact-img"src="/mediafiles/whatsapp.svg" width="50px" height="50px" alt="whats app link"></a></li></a></li>
+			    </ul>
+		    </div>
+	    </div>
+    </div>
+
+    <div id="copyright" class="container">
+        <p>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+
+    	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+    </div>
+
+    {% endblock %}
+</body>
+
+</html> 

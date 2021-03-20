@@ -1,0 +1,20 @@
+{% extends "base_home/base_pages.html" %}
+
+{% block title %}
+    <title>Job Detail - Portfolio | Bruno Terres</title>
+{% endblock %}
+
+{% load static %}
+{% block content %}
+
+    <div class="container job-box">
+
+        <img src="{% static 'images/'|add:job.name|add:'.png' %}"  width="160" height="160" alt="job logo" >
+        <h1> {{ job.name }} </h1>
+
+        <p> {{ job.description }}</p>
+    
+    </div>
+
+    
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Delete Incident - Hero | Bruno Terres</title>
+{% endblock %}
+
+{% block content %}
+    
+    <h1>Delete Incident</h1>
+    
+    <p>Are you sure you want to delete the Incident: {{ incident }}?</p>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Yes, delete!">
+    </form>
+
+{% endblock %}

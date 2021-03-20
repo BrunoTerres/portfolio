@@ -1,0 +1,20 @@
+*  {
+    background: blue;
+}
+
+.safe-video {
+    margin: auto;
+    text-align: center;
+    padding: 2em;
+    position: relative;
+    left: 1em;
+}
+
+.safe-video h1 {
+    background: aqua;
+}
+
+.safe-description {
+    margin: auto;
+    text-align: center;
+}

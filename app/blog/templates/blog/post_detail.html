@@ -1,0 +1,19 @@
+{% extends 'blog/index.html' %}
+
+{% block title %}
+    <title>Post Detail - Django Blog | Bruno Terres</title>
+{% endblock %}
+
+{% block content_post %}
+    
+    <h2 class="title"><a href="#">{{ post.title }}</a></h2>
+    <p class="meta">Postado em {{ post.post_date }}
+        &nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">{{ post.category }}</a></p>
+    <div class="entry"> <a href="#" class="image image-full"><img src="images/pics01.jpg" alt="" /></a>
+        <p> {{ post.text_body }}... </p>
+    </div>
+    <div>
+        <a href="{% url 'blog:home' %}"><button type="button" class="button">Voltar</button></a>
+    </div>
+
+{% endblock %}

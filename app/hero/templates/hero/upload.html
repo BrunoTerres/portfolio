@@ -1,0 +1,17 @@
+{% block content %}
+
+{% block title %}
+    <title>Upload | Portfolio</title>
+{% endblock %}
+
+  <form action="{% url 'hero:upload' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image_file">
+    <input type="submit" value="submit" />
+  </form>
+
+  {% if image_url %}
+    <p>File uploaded at: <a href="{{ image_url }}">{{ image_url }}</a></p>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Escalate   
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20111121
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	
+	{% block head-meta %}    
+	<meta name="keywords" content="portfolio, web dev, django">
+	<meta name="description" content="Hi, I'm Bruno Terres a Back-end Web Developer and this is my portfoli. Welcome!">
+	{% endblock %}
+	
+	{% block title %}
+	    <title>Django Blog - Portfolio | Bruno Terres</title>
+	{% endblock %}
+	
+	{% load static %}
+	<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+
+	<div id="menu">
+		<ul>
+			<li><a href="{% url 'home:home' %}">Homepage</a></li>
+			<li><a href="{% url 'login' %}">Apps</a></li>
+			<li class="current_page_item"><a href="#">Blog</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Links</a></li>
+		</ul>
+	</div>
+
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#">Django Blog</a></h1>
+				<p>Powered by <a href="#" rel="nofollow">Django</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+						
+					<div class="post">
+
+
+						{% block content_post %}
+
+						{% endblock %}
+
+						{% block pagination %}
+						{% if is_paginated %}
+							<div class="pagination">
+								<span class="page-links">
+									{% if page_obj.has_previous %}
+										<a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+									{% endif %}
+									<span class="page-current">
+										Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+									</span>
+									{% if page_obj.has_next %}
+										<a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+									{% endif %}
+								</span>
+							</div>
+						{% endif %}
+					{% endblock %}
+					</div>
+				
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				<div id="sidebar">
+					<ul>
+						{% if user.is_authenticated %}
+							<a href="{% url 'blog:post_new' %}" class="top-menu">
+								<img src="/mediafiles/plus.svg" alt="New Post" width="50" height="50">
+							</a>
+							<li>User: {{ user.get_username }}</li>
+							<li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+						{% else %}
+							<a href="{% url 'login'%}?next={{request.path}}"><p><strong>Login to create new posts...</strong></p></a>
+						 {% endif %} 
+						<li>
+							<h2>Vídeos</h2>
+							<ul>
+								<li><a href="#">AutoCad</a></li>
+								<li><a href="#">Projetos</a></li>
+							</ul>
+						</li>
+						<li>
+							<h2>Links Úteis</h2>
+							<ul>
+								<li><a href="#">Aliquam libero</a></li>
+								<li><a href="#">Consectetuer adipiscing elit</a></li>
+								<li><a href="#">Metus aliquam pellentesque</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page --> 
+</div>
+<div id="footer">
+</div>
+<!-- end #footer -->
+</body>
+</html>
