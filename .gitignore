@@ -1,3 +1,13 @@
+# Docker 
+docker-compose*
+Dockerfile*
+
+# Large Files
+app/mediafiles/safe_place.mp4
+
+# Personal FIles
+bak
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -103,6 +113,7 @@ celerybeat.pid
 
 # Environments
 .env
+.env*
 .venv
 env/
 venv/

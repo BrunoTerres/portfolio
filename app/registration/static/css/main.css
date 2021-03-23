@@ -93,3 +93,10 @@ form textarea {
   position: relative;
   left: 1em;
 }
+
+.login-form {
+  margin: auto;
+  text-align: center;
+  position: relative;
+  left: 1em;
+}

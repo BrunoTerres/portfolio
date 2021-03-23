@@ -7,16 +7,18 @@
 {% load crispy_forms_tags %}
 {% block style %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/logon.css' %}">
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/logon.css' %}">
 
 {% endblock %}
 
 
 {% block content %}
-    <div class="row logon-container">
-      <div class="col-md-5">  
-        {% if form.errors %}
+
+<div class='row'>
+  <div class='col-md-3 login-form'>  
+    <section class="form">
+      {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
         {% endif %}
 
@@ -24,7 +26,7 @@
 
         <h3>Hello {{ user.get_username }}</h3>
 
-        <p>Thanks for logging in, now you can post in the Blog and create new NGO incidents.</p>
+        <p>Thanks, now you can post in the Blog and create new NGO incidents.</p>
         
         <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
         
@@ -36,29 +38,32 @@
           <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             <table>
-              <tr>
-                <td>{{ form.username  | as_crispy_field }}</td>
-              </tr>
-              <tr>
-                <td>{{ form.password | as_crispy_field }}</td>
-              </tr>
+              <p>
+                {{ form.username  | as_crispy_field }}
+              </p>
+              <p>
+                {{ form.password | as_crispy_field }}
+              </p>
             </table>
-            <input class="button-login" type="submit" value="login" />
+            <input class="button" type="submit" value="login" />
             <input type="hidden" name="next" value="{{ next }}" />
+
           </form>
           {# Assumes you setup the password_reset view in your URLconf #}
           <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
           <p><a href="{% url 'signup' %}">I don't have a account</a></p>
+        
         </section>
 
         {% endif %}
       </div>
-        
-      <div class="col-md-5 login-app-container">
-        
-        <a href="{% url 'hero:index' %}">
-          <div class="row login-app-button">
-              
+  <div class='col-md-5 apps-container'>
+
+        <h1>Apps</h1>
+    
+        <a class="login-app-link" href="{% url 'hero:index' %}">
+          
+          <div class="row login-app-button">      
               <div class="col-md-5">  
                 <img class="login-img-button" src='/mediafiles/logo.svg' alt="Blog" width="100" height="100"/>
               </div>
@@ -66,9 +71,11 @@
                 <h3 class="job-title">Be The Hero</h3>
               </div>
           </div>
+
         </a>
           
         <a class="login-app-link" href="{% url 'blog:home' %}">
+
           <div class="row login-app-button">
               
               <div class="col-md-5">  
@@ -78,11 +85,12 @@
                 <h3>Django Blog</h3>
               </div>
           </div>
+        
         </a>
 
         <a href="">
-          <div class="row login-app-button">
-              
+        
+          <div class="row login-app-button">      
               <div class="col-md-5">  
                 <img class="login-img-button" src='/mediafiles/safeplace.png' alt="Blog" width="100" height="100"/>
               </div>
@@ -90,11 +98,14 @@
                 <h3 class="job-title">Safe Place</h3>
               </div>
           </div>
-        </a>
 
-      </div>
-                
-    </div>
+        </a>
+    
+    <div>
+  </div>
+
+
+
 
 
 {% endblock %}
