@@ -1,0 +1,57 @@
+<DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Add addiitional CSS in static file -->
+    {% block head-meta %}    
+    <meta name="keywords" content="portfolio, web dev, django, Be the Hero">
+    <meta name="description" content="A Django based Web App of Be The Hero - Application to connect NGOs and other institutions to people who are available to help">
+    {% endblock %}
+
+
+    {% block title %}
+        <title>Hero - Portfolio | Bruno Terres</title>
+    {% endblock %}
+
+
+    {% load static %}
+    <linK rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <linK rel="stylesheet" href="{% static 'css/global.css' %}">
+    <linK rel="stylesheet" href="{% static 'css/logon.css' %}">
+    {% block static %}
+    
+    {% endblock %}
+
+</head>
+<body>
+
+    <div id="menu" class="header">
+
+            <a href="" class="logo">   
+                <img src='/mediafiles/logo.svg' alt="Be The Hero" width="100" height="50"/>
+            </a>
+
+        <div class="header-right">
+
+            <ul>
+                <li><a href="{% url 'hero:index' %}" class="header-link">About</a></li>
+                <li><a href="{% url 'hero:ngos' %}" class="header-link">NGOs</a></li>
+                <li><a href="{% url 'hero:incidents' %}" class="header-link">Incidents</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+                {% endif %}
+            </ul>
+
+        </div>
+    <div class="container login-container">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+</body>
+</html>

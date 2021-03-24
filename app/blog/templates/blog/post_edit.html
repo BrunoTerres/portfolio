@@ -15,7 +15,7 @@
     <h2>New post</h2>
     <form method="POST" class="post-form">
         {% csrf_token %}
-        {% for field in form %}
+         {% for field in form %}
           <p>
             <!--{{ field.label_tag }}<br>-->
             {{ field | as_crispy_field}}

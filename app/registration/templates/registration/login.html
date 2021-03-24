@@ -1,4 +1,4 @@
-{% extends "base_pages.html" %}
+{% extends "base.html" %}
 
 {% block title %}
     <title>Login - Auth | Portfolio</title>
@@ -16,7 +16,7 @@
 {% block content %}
 
 <div class='row'>
-  <div class='col-md-3 login-form'>  
+  <div class='login-form'>  
     <section class="form">
       {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
@@ -57,53 +57,96 @@
 
         {% endif %}
       </div>
-  <div class='col-md-5 apps-container'>
+  
 
-        <h1>Apps</h1>
-    
-        <a class="login-app-link" href="{% url 'hero:index' %}">
-          
-          <div class="row login-app-button">      
-              <div class="col-md-5">  
-                <img class="login-img-button" src='/mediafiles/logo.svg' alt="Blog" width="100" height="100"/>
-              </div>
-              <div class="col-md-7">  
-                <h3 class="job-title">Be The Hero</h3>
-              </div>
-          </div>
+  <div class='login-form'>  
+    <section class="form">
+      {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
 
-        </a>
-          
-        <a class="login-app-link" href="{% url 'blog:home' %}">
+        {% if user.is_authenticated %}
 
-          <div class="row login-app-button">
-              
-              <div class="col-md-5">  
-                <img class="login-img-button" src='/mediafiles/blog.jpeg' alt="Blog" width="100" height="100"/>
-              </div>
-              <div class="col-md-7 job-title">  
-                <h3>Django Blog</h3>
-              </div>
-          </div>
+        <h3>Hello {{ user.get_username }}</h3>
+
+        <p>Thanks, now you can post in the Blog and create new NGO incidents.</p>
         
-        </a>
-
-        <a href="">
+        <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
         
-          <div class="row login-app-button">      
-              <div class="col-md-5">  
-                <img class="login-img-button" src='/mediafiles/safeplace.png' alt="Blog" width="100" height="100"/>
-              </div>
-              <div class="col-md-7">  
-                <h3 class="job-title">Safe Place</h3>
-              </div>
-          </div>
+        <img src="/mediafiles/highfive.png" alt="high-five" width="350" height="400">
+        {% else %}
 
-        </a>
-    
-    <div>
+        <section class="form">
+          <h1> Login </h1>
+          <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <table>
+              <p>
+                {{ form.username  | as_crispy_field }}
+              </p>
+              <p>
+                {{ form.password | as_crispy_field }}
+              </p>
+            </table>
+            <input class="button" type="submit" value="login" />
+            <input type="hidden" name="next" value="{{ next }}" />
+
+          </form>
+          {# Assumes you setup the password_reset view in your URLconf #}
+          <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+          <p><a href="{% url 'signup' %}">I don't have a account</a></p>
+        
+        </section>
+
+        {% endif %}
+      </div>
+  
+
+
+
+  <div class='login-form'>  
+    <section class="form">
+      {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+
+        <h3>Hello {{ user.get_username }}</h3>
+
+        <p>Thanks, now you can post in the Blog and create new NGO incidents.</p>
+        
+        <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+        
+        <img src="/mediafiles/highfive.png" alt="high-five" width="350" height="400">
+        {% else %}
+
+        <section class="form">
+          <h1> Login </h1>
+          <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <table>
+              <p>
+                {{ form.username  | as_crispy_field }}
+              </p>
+              <p>
+                {{ form.password | as_crispy_field }}
+              </p>
+            </table>
+            <input class="button" type="submit" value="login" />
+            <input type="hidden" name="next" value="{{ next }}" />
+
+          </form>
+          {# Assumes you setup the password_reset view in your URLconf #}
+          <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+          <p><a href="{% url 'signup' %}">I don't have a account</a></p>
+        
+        </section>
+
+        {% endif %}
+      </div>
+  
   </div>
-
 
 
 
