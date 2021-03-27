@@ -1,4 +1,4 @@
-{% extends "base_pages.html" %}
+{% extends "base.html" %}
 
 {% block title %}
     <title>Sign Up - Auth | Portfolio</title>
@@ -16,6 +16,7 @@
   <div class='col-md-5 signup-form'>  
     <section class="form">
       <h1> Sign Up </h1>
+
 
       <form method="post">
         {% csrf_token %}

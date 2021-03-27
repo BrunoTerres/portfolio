@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Login - Auth | Portfolio</title>
+{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/logon.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class='row'>
+  <div class='login-form'>  
+    <section class="form">
+      {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+
+        <h3>Hello {{ user.get_username }}</h3>
+
+        <p>Thanks, now you can post in the Blog and create new NGO incidents.</p>
+        
+        <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+        
+        <img src="/mediafiles/highfive.png" alt="high-five" width="350" height="400">
+        {% else %}
+
+        <section class="form">
+          <h1> Login </h1>
+          <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <table>
+              <p>
+                {{ form.username  | as_crispy_field }}
+              </p>
+              <p>
+                {{ form.password | as_crispy_field }}
+              </p>
+            </table>
+            <input class="button" type="submit" value="login" />
+            <input type="hidden" name="next" value="{{ next }}" />
+
+          </form>
+          {# Assumes you setup the password_reset view in your URLconf #}
+          <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+          <p><a href="{% url 'signup' %}">I don't have a account</a></p>
+        
+        </section>
+
+        {% endif %}
+      </div>
+  
+
+  
+  </div>
+
+
+
+
+{% endblock %}

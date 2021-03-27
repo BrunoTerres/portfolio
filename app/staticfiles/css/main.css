@@ -9,7 +9,6 @@
 
 body {
   font: 400 14px Roboto, sans-serif;
-  background: #e02041;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -83,6 +82,12 @@ form textarea {
   opacity: 0.8;
 }
 
-.homebase {
-  color: aqua;
+
+
+.signup-form {
+  margin: auto;
+  text-align: center;
+  position: relative;
+  left: 1em;
 }
+
